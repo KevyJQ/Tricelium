@@ -22,7 +22,7 @@ public class UserController {
 	@GetMapping({ "/users", "/" })
 	public String UsersList(Model model) {
 		model.addAttribute("users", servicio.ListaDeUsuarios());
-		return "users"; // Nos retorna al archivo de Usuarios
+		return "users"; // Nos retorna al archivo de Usuarios 
 	}
 
 	@PostMapping("/users")
