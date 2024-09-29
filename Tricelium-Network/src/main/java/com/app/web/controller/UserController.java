@@ -3,7 +3,6 @@ package com.app.web.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +21,7 @@ public class UserController {
 	@GetMapping({ "/users", "/" })
 	public String UsersList(Model model) {
 		model.addAttribute("users", servicio.ListaDeUsuarios());
-		return "users"; // Nos retorna al archivo de Usuarios 
+		return "users"; // Nos retorna al archivo de Usuarios
 	}
 
 	@PostMapping("/users")
@@ -30,5 +29,5 @@ public class UserController {
 		servicio.saveUser(user);
 		return "redirect:/users";
 	}
-	
+
 }
